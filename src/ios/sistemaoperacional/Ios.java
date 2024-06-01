@@ -3,77 +3,76 @@ package ios.sistemaoperacional;
 import ios.aparelhotelefonico.AparelhoTelefonico;
 import ios.navegadorinternet.NavegadorNaInternet;
 import ios.reprodutormusical.ReprodutorMusical;
+import ios.aparelhotelefonico.ServicoLigacao;
+import ios.navegadorinternet.ServicaoWeb;
+import ios.reprodutormusical.ServiceReprodutorMusical;
 
-public class Ios implements ReprodutorMusical, AparelhoTelefonico, NavegadorNaInternet {
-    private String musica;
-    private String numero;
-    private String site;
+public class Ios {
+    private AparelhoTelefonico aparelhoTelefonico;
+    private ReprodutorMusical reprodutorMusical;
+    private NavegadorNaInternet navegadorNaInternet;
 
-    public void exibirPagina(){
-        verificarConexao();
-        System.out.println("Exibindo Pagina");
-    }
+    public Ios(){
+        this.aparelhoTelefonico = new ServicoLigacao();
 
-    public void atualizarPagina(){
-        System.out.println("Atualizando pagina");
-    }
+        this.reprodutorMusical = new ServiceReprodutorMusical();
 
-    public void adicionarNovaAba(){
-        System.out.println("Adicionando nova aba");
-    }
-
-    public String getPagina(){
-        return site;
-    }
-
-    public void setPagina(String site){
-        this.site = site;
-    }
-
-    private void verificarConexao(){
-        System.out.println("Verificando conexão...");
-    }
-
-    public void iniciarCorreioVoz(){
-        verificarSinal();
-        System.out.println("INICIANDO CORREIO DE VOZ...");
+        this.navegadorNaInternet = new ServicaoWeb();
     }
 
     public void ligar(){
-        verificarSinal();
-        System.out.println("FAZENDO LIGAÇÃO...");
+        aparelhoTelefonico.ligar();
     }
 
     public void atender(){
-        System.out.println("ATENDENDO O CELULAR...");
+        aparelhoTelefonico.atender();
+    }
+
+    public void iniciarCorreioVoz(){
+        aparelhoTelefonico.iniciarCorreioVoz();
     }
 
     public String getNumero(){
-        return numero;
+        return aparelhoTelefonico.getNumero();
     }
 
     public void setNumero(String numero){
-        this.numero = numero;
-    }
-
-    private void verificarSinal(){
-        System.out.println("Verificando Sinal...");
+        aparelhoTelefonico.setNumero(numero);
     }
 
     public void tocar(){
-        System.out.println("TOCANDO MÚSICA...");
+        reprodutorMusical.tocar();
     }
 
     public void pausar(){
-        System.out.println("PAUSANDO MÚSICA");
-    }
-
-    public void setMusica(String musica) {
-        this.musica = musica;
+        reprodutorMusical.pausar();
     }
 
     public String getMusica(){
-        return musica;
+        return reprodutorMusical.getMusica();
     }
 
+    public void setMusica(String musica){
+        reprodutorMusical.setMusica(musica);
+    }
+
+    public void exibirPagina(){
+        navegadorNaInternet.exibirPagina();
+    }
+
+    public void atualizarPagina(){
+        navegadorNaInternet.atualizarPagina();
+    }
+
+    public void adicionarNovaAba(){
+        navegadorNaInternet.adicionarNovaAba();
+    }
+
+    public String getPagina(){
+        return navegadorNaInternet.getPagina();
+    }
+
+    public void setPagina(String site){
+        navegadorNaInternet.setPagina(site);
+    }
 }
