@@ -1,5 +1,10 @@
 package ios.sistemaoperacional;
 
+/**
+ * Aqui como podemos ver eu importei bem dizer todos os serviços do meu código ou aplicação
+ * porque será aqui onde tudo vai ser executado porque esse é o sistema operacional do IPhone bem dizer o coração dele...
+ */
+
 import ios.aparelhotelefonico.AparelhoTelefonico;
 import ios.navegadorinternet.NavegadorNaInternet;
 import ios.reprodutormusical.ReprodutorMusical;
@@ -7,6 +12,12 @@ import ios.aparelhotelefonico.ServicoLigacao;
 import ios.navegadorinternet.ServicaoWeb;
 import ios.reprodutormusical.ServiceReprodutorMusical;
 
+/**
+ * Já aqui vemos nosso Ios sua classe
+ * Aqui eu simplesmente criei as variaveis privadas que receberam os valores de interface onde agora eu posso injetar
+ * as dependencias com classes concretas, dessa forma também cuidando do encapsulamento, dessa forma falando alguém saberia que esse
+ * método ou serviço existe, só que não saberia a logica e implementação por traz...
+ */
 public class Ios {
     private AparelhoTelefonico aparelhoTelefonico;
     private ReprodutorMusical reprodutorMusical;

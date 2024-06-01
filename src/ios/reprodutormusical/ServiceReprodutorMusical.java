@@ -1,5 +1,9 @@
 package ios.reprodutormusical;
 
+/**
+ * Aqui está a classe com os métodos concretos que fornecem o serviço e atende ao contrato da interface
+ * Reprodutor Musical...
+ */
 public class ServiceReprodutorMusical implements ReprodutorMusical{
     private String musica;
 
